@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "i045yFVrOpfGS098IWWXRCqxd5k+7BFynrotbKo2TjkwyCmSmqYQ2BMOXuH8DE5ubTWru/rgsSmRkU+rcAGsUg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\auton\\Desktop\\repos\\tech-test-payment-api\\tech-test-payment-api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\auton\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\auton\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\auton\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\auton\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\auton\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\auton\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
