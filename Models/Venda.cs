@@ -18,7 +18,6 @@ namespace tech_test_payment_api.Models
         public List<Item> ListaItems { get; set; }
         [Required]
         public EnumStatusVenda StatusVenda { get; set; }
-        public string Status { get; set; }
         
     }
 }

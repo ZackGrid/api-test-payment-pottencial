@@ -2,10 +2,20 @@ using Microsoft.EntityFrameworkCore;
 using tech_test_payment_api.Models;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using tech_test_payment_api.Context;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+builder.Services
+    .AddDbContext<VendaContext>(options => options.UseInMemoryDatabase("NomeDB"));
+
+builder.Services.AddControllers().AddJsonOptions(options =>
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -16,8 +26,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "ToDo API",
-        Description = "An ASP.NET Core Web API for managing ToDo items",
+        Title = "Payment API",
+        Description = "An ASP.NET Core Web API",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
