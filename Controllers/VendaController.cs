@@ -55,9 +55,7 @@ namespace tech_test_payment_api.Controllers
              .Where(i=> i._vendedor.Id == id)
              .Include(i=> i.ListaItems)
              .Where(i=> i.Id == id)
-             .FirstOrDefaultAsync();
-
-            
+             .FirstOrDefaultAsync();            
 
             return Ok(venda);
         }
@@ -89,7 +87,24 @@ namespace tech_test_payment_api.Controllers
              .Where(i=> i.Id == id)
              .FirstOrDefaultAsync();
 
-            venda.StatusVenda = status;
+             if (venda.StatusVenda == EnumStatusVenda.AguardandoPagamento && (status == EnumStatusVenda.PagamentoAprovado || status == EnumStatusVenda.Cancelada))
+             {
+                venda.StatusVenda = status;
+            }
+            else if (venda.StatusVenda == EnumStatusVenda.PagamentoAprovado && (status == EnumStatusVenda.EnviadoParaTransportadora || status == EnumStatusVenda.Cancelada))
+            {
+                venda.StatusVenda = status;
+            }
+            else if (venda.StatusVenda == EnumStatusVenda.EnviadoParaTransportadora && status == EnumStatusVenda.Entregue)
+            {
+                venda.StatusVenda = status;
+            }
+            else 
+            {
+                return BadRequest(new { Erro = "Transição não permitida, verifique quais transições de status são permitidas e tente novamente" });
+            }
+             
+
             _context.Vendas.Update(venda);
             _context.SaveChanges();
 
