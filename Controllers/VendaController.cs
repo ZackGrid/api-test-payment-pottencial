@@ -27,8 +27,9 @@ namespace tech_test_payment_api.Controllers
         /// <param name="venda"></param>
         /// <returns></returns>
         /// <remarks>
-        /// Toda nova venda inicia em status Aguardando Pagamento <br/>
-        /// Todos os campos são obrigatórios
+        /// Toda nova venda inicia com o status Aguardando Pagamento <br/>
+        /// <br/>
+        /// *Todos os campos são obrigatórios
         ///
         /// </remarks>
         [HttpPost]
@@ -69,6 +70,7 @@ namespace tech_test_payment_api.Controllers
         /// <returns></returns>
         /// <remarks>
         /// Status só podem ser atualizados da seguinte forma: <br/>
+        /// <br/>
         /// De status Aguardando Pagamento para status Pagamento Aprovado ou
         /// status Cancelada <br/>
         /// De status Pagamento Aprovado para status Enviado para Transportadora
